@@ -1,6 +1,7 @@
 package de.ye.boat_client;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -130,14 +131,14 @@ public class GUI {
 		 System.out.println("Start creating CLIENT_FRAME");
 		
          clientFrame = new JFrame("ROVER_BASE");
-         clientFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+         clientFrame.setSize(new Dimension(400,300));
          clientFrame.setVisible(true);
          clientPanel = new JPanel();
          
          button_CONNECT = new JButton("CONNECT");
          button_CONNECT.addActionListener(new ActionListener_CONNECT());
          
-         cm = new JButton("CLEAN_MOTOR");
+         cm = new JButton("POWER_0");
          cm.addActionListener(new ActionListener_CLEAN_MOTOR());
 
 		
@@ -238,14 +239,16 @@ public class GUI {
 				public void actionPerformed(ActionEvent e) {
 					if(on==false){
 						on=true;
-						System.out.println("CM_AN");
-						GUI.writer_led.println("CM_ON");
+						cm.setText("POWER_1");
+						System.out.println("POWER_1");
+						GUI.writer_led.println("power_1");
 						GUI.writer_led.flush();
 					} else {
 						on=false;
-						GUI.writer_led.println("CM_OFF");
+						cm.setText("POWER_0");
+						GUI.writer_led.println("power_0");
 						GUI.writer_led.flush();
-						System.out.println("CM_AUS");
+						System.out.println("POWER_0");
 					}
 				}
 				

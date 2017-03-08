@@ -10,6 +10,9 @@ public class ENG_CALC implements Runnable{
 	public static int LEFT_MOTOR=0;
 	public static int RIGHT_MOTOR=0;
 	
+	public static String mode="0";
+	
+	
 	@Override
 		public void run() {
 			while(true){
@@ -31,22 +34,38 @@ public class ENG_CALC implements Runnable{
 								LEFT_MOTOR=0;
 								RIGHT_MOTOR=0;
 							} else if(X_AX<40){
-								RIGHT_MOTOR=120;
-								LEFT_MOTOR=120;
-								ENGINE.BACK_LEFT();
+								//LEFT
+								if(mode.equalsIgnoreCase("0")){
+									RIGHT_MOTOR=180;
+								} else if(mode.equalsIgnoreCase("1")){
+									RIGHT_MOTOR=210;
+								}
 							} else if(X_AX>60){
-								LEFT_MOTOR=120;
-								RIGHT_MOTOR=120;
-								ENGINE.BACK_RIGHT();
+								//Right
+								if(mode.equalsIgnoreCase("0")){
+									LEFT_MOTOR=180;
+								} else if(mode.equalsIgnoreCase("1")){
+									LEFT_MOTOR=210;
+								}
 							}
 						} else if(Y_AX>60){
-							LEFT_MOTOR=120;
-							RIGHT_MOTOR=120;
+							if(mode.equalsIgnoreCase("0")){
+								LEFT_MOTOR=120;
+								RIGHT_MOTOR=120;
+							} else if(mode.equalsIgnoreCase("1")){
+								LEFT_MOTOR=150;
+								RIGHT_MOTOR=150;
+							}
 							ENGINE.BACK_LEFT();
 							ENGINE.BACK_RIGHT();
 						} else if(Y_AX<40){
-							LEFT_MOTOR=120;
-							RIGHT_MOTOR=120;
+							if(mode.equalsIgnoreCase("0")){
+								LEFT_MOTOR=120;
+								RIGHT_MOTOR=120;
+							} else if(mode.equalsIgnoreCase("1")){
+								LEFT_MOTOR=150;
+								RIGHT_MOTOR=150;
+							}
 							ENGINE.FRONT_LEFT();
 							ENGINE.FRONT_RIGHT();
 						}

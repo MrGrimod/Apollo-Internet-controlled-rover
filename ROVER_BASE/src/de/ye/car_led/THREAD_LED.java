@@ -7,6 +7,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import de.ye.car_eng.ENG_CALC;
 import de.ye.car_main.Main;
 
 public class THREAD_LED implements Runnable {
@@ -59,11 +60,11 @@ public class THREAD_LED implements Runnable {
 				if(s.equalsIgnoreCase("pic_load")){
 					Process Process1 = Runtime.getRuntime().exec("sudo java -jar loadup.jar");
 				}
-				if(s.equalsIgnoreCase("CM_ON")){
-					LED.CLEAN_MOTOR_ON();
+				if(s.equalsIgnoreCase("POWER_1")){
+					ENG_CALC.mode="1";
 				} 
-				if(s.equalsIgnoreCase("CM_OFF")){
-					LED.CLEAN_MOTOR_OFF();
+				if(s.equalsIgnoreCase("POWER_0")){
+					ENG_CALC.mode="0";
 				}
 			}
 			System.out.println("STATUS CLIENT LISTENING READY._LED");
