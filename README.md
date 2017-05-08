@@ -2,9 +2,7 @@ Apollo
 ===================
 
 
-Apollo is an Rover equipped with an Raspberry and a LTE router. The Raspberry on the rover connects to an Server to get the informations he needs. The program for controlling the rover is connected to the server too.
-
-> <i class="icon-download"></i>[Photos](https://twitter.com/MrGrimod/status/822866628652236800).
+Apollo is an Rover equipped with an Raspberry and a LTE router. When the Rover is powered he connects to an program which has to be located on an external server. When the Rover is connected the program for controlling can be connected too. Now you can controll the rover.
 
 ----------
 
