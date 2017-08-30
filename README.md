@@ -1,12 +1,14 @@
 Apollo
 ===================
 
-
-Apollo is an Rover equipped with an Raspberry and a LTE router. When the Rover is powered he connects to an program which has to be located on an external server. When the Rover is connected the program for controlling can be connected too. Now you can controll the rover.
-
-----------
-
-#### Its programmed and published by Luick K. aka. MrGrimod.
-
+The Apollo is a remote controlled Rover
+which can be controlled over large distances with almost no delay.
 
 ----------
+
+
+How does it work?
+-------------
+The Raspberry on the Rover(Rover base) connects via. Java TCP Sockets, to an external Server(Rover Satellite).
+When Rover is successfully connected, the Rover can now be controlled
+by using Rover Station software.
